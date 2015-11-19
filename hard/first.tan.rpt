@@ -1,0 +1,348 @@
+Classic Timing Analyzer report for first
+Sat Oct 16 14:17:34 2010
+Quartus II Version 7.2 Build 175 11/20/2007 Service Pack 1 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Clock Setup: 'clk'
+  6. tsu
+  7. tco
+  8. th
+  9. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2007 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                        ;
++------------------------------+-------+---------------+----------------------------------+------------+------------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                      ; From       ; To               ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+----------------------------------+------------+------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 7.900 ns                         ; txe        ; txe_buf          ; --         ; clk      ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 12.000 ns                        ; data_rd[0] ; led[0]           ; clk        ; --       ; 0            ;
+; Worst-case th                ; N/A   ; None          ; -3.300 ns                        ; rxf        ; rxf_buf          ; --         ; clk      ; 0            ;
+; Clock Setup: 'clk'           ; N/A   ; None          ; 129.87 MHz ( period = 7.700 ns ) ; data_rd[1] ; usb_data[7]~reg0 ; clk        ; clk      ; 0            ;
+; Total number of failed paths ;       ;               ;                                  ;            ;                  ;            ;          ; 0            ;
++------------------------------+-------+---------------+----------------------------------+------------+------------------+------------+----------+--------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                      ;
++----------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                         ; Setting            ; From ; To ; Entity Name ;
++----------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                    ; EP1K10TC144-3      ;      ;    ;             ;
+; Timing Models                                                  ; Final              ;      ;    ;             ;
+; Default hold multicycle                                        ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                      ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                         ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                 ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                               ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                          ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                        ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                               ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                           ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                  ; Off                ;      ;    ;             ;
+; Number of source nodes to report per destination node          ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                          ; 10                 ;      ;    ;             ;
+; Number of paths to report                                      ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                   ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                         ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                     ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                   ; Off                ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis ; Off                ;      ;    ;             ;
++----------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; clk             ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'clk'                                                                                                                                                                                    ;
++-------+------------------------------------------------+---------------+------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack ; Actual fmax (period)                           ; From          ; To               ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-------+------------------------------------------------+---------------+------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A   ; 129.87 MHz ( period = 7.700 ns )               ; data_rd[1]    ; usb_data[7]~reg0 ; clk        ; clk      ; None                        ; None                      ; 6.600 ns                ;
+; N/A   ; 131.58 MHz ( period = 7.600 ns )               ; counter_rd[1] ; usb_data[0]~en   ; clk        ; clk      ; None                        ; None                      ; 6.500 ns                ;
+; N/A   ; 131.58 MHz ( period = 7.600 ns )               ; counter_rd[1] ; usb_data[2]~reg0 ; clk        ; clk      ; None                        ; None                      ; 6.500 ns                ;
+; N/A   ; 131.58 MHz ( period = 7.600 ns )               ; counter_rd[1] ; usb_data[3]~reg0 ; clk        ; clk      ; None                        ; None                      ; 6.500 ns                ;
+; N/A   ; 131.58 MHz ( period = 7.600 ns )               ; counter_rd[1] ; usb_data[4]~reg0 ; clk        ; clk      ; None                        ; None                      ; 6.500 ns                ;
+; N/A   ; 131.58 MHz ( period = 7.600 ns )               ; counter_rd[1] ; usb_data[5]~reg0 ; clk        ; clk      ; None                        ; None                      ; 6.500 ns                ;
+; N/A   ; 131.58 MHz ( period = 7.600 ns )               ; counter_rd[1] ; usb_data[6]~reg0 ; clk        ; clk      ; None                        ; None                      ; 6.500 ns                ;
+; N/A   ; 131.58 MHz ( period = 7.600 ns )               ; counter_rd[1] ; usb_data[7]~reg0 ; clk        ; clk      ; None                        ; None                      ; 6.500 ns                ;
+; N/A   ; 133.33 MHz ( period = 7.500 ns )               ; counter_wr[0] ; counter_wr[0]    ; clk        ; clk      ; None                        ; None                      ; 6.400 ns                ;
+; N/A   ; 133.33 MHz ( period = 7.500 ns )               ; data_rd[1]    ; usb_data[6]~reg0 ; clk        ; clk      ; None                        ; None                      ; 6.400 ns                ;
+; N/A   ; 133.33 MHz ( period = 7.500 ns )               ; data_rd[2]    ; usb_data[7]~reg0 ; clk        ; clk      ; None                        ; None                      ; 6.400 ns                ;
+; N/A   ; 135.14 MHz ( period = 7.400 ns )               ; counter_rd[0] ; usb_data[0]~en   ; clk        ; clk      ; None                        ; None                      ; 6.300 ns                ;
+; N/A   ; 135.14 MHz ( period = 7.400 ns )               ; counter_rd[0] ; usb_data[2]~reg0 ; clk        ; clk      ; None                        ; None                      ; 6.300 ns                ;
+; N/A   ; 135.14 MHz ( period = 7.400 ns )               ; counter_rd[0] ; usb_data[3]~reg0 ; clk        ; clk      ; None                        ; None                      ; 6.300 ns                ;
+; N/A   ; 135.14 MHz ( period = 7.400 ns )               ; counter_rd[0] ; usb_data[4]~reg0 ; clk        ; clk      ; None                        ; None                      ; 6.300 ns                ;
+; N/A   ; 135.14 MHz ( period = 7.400 ns )               ; counter_rd[0] ; usb_data[5]~reg0 ; clk        ; clk      ; None                        ; None                      ; 6.300 ns                ;
+; N/A   ; 135.14 MHz ( period = 7.400 ns )               ; counter_rd[0] ; usb_data[6]~reg0 ; clk        ; clk      ; None                        ; None                      ; 6.300 ns                ;
+; N/A   ; 135.14 MHz ( period = 7.400 ns )               ; counter_rd[0] ; usb_data[7]~reg0 ; clk        ; clk      ; None                        ; None                      ; 6.300 ns                ;
+; N/A   ; 136.99 MHz ( period = 7.300 ns )               ; data_rd[1]    ; usb_data[5]~reg0 ; clk        ; clk      ; None                        ; None                      ; 6.200 ns                ;
+; N/A   ; 136.99 MHz ( period = 7.300 ns )               ; data_rd[2]    ; usb_data[6]~reg0 ; clk        ; clk      ; None                        ; None                      ; 6.200 ns                ;
+; N/A   ; 138.89 MHz ( period = 7.200 ns )               ; counter_wr[0] ; wr_buf           ; clk        ; clk      ; None                        ; None                      ; 6.100 ns                ;
+; N/A   ; 138.89 MHz ( period = 7.200 ns )               ; data_rd[3]    ; usb_data[7]~reg0 ; clk        ; clk      ; None                        ; None                      ; 6.100 ns                ;
+; N/A   ; 140.85 MHz ( period = 7.100 ns )               ; data_rd[1]    ; usb_data[4]~reg0 ; clk        ; clk      ; None                        ; None                      ; 6.000 ns                ;
+; N/A   ; 140.85 MHz ( period = 7.100 ns )               ; data_rd[2]    ; usb_data[5]~reg0 ; clk        ; clk      ; None                        ; None                      ; 6.000 ns                ;
+; N/A   ; 140.85 MHz ( period = 7.100 ns )               ; data_rd[4]    ; usb_data[7]~reg0 ; clk        ; clk      ; None                        ; None                      ; 6.000 ns                ;
+; N/A   ; 142.86 MHz ( period = 7.000 ns )               ; data_rd[3]    ; usb_data[6]~reg0 ; clk        ; clk      ; None                        ; None                      ; 5.900 ns                ;
+; N/A   ; 144.93 MHz ( period = 6.900 ns )               ; counter_wr[1] ; counter_wr[0]    ; clk        ; clk      ; None                        ; None                      ; 5.800 ns                ;
+; N/A   ; 144.93 MHz ( period = 6.900 ns )               ; counter_wr[0] ; counter_rd[0]    ; clk        ; clk      ; None                        ; None                      ; 5.800 ns                ;
+; N/A   ; 144.93 MHz ( period = 6.900 ns )               ; data_rd[1]    ; usb_data[3]~reg0 ; clk        ; clk      ; None                        ; None                      ; 5.800 ns                ;
+; N/A   ; 144.93 MHz ( period = 6.900 ns )               ; data_rd[2]    ; usb_data[4]~reg0 ; clk        ; clk      ; None                        ; None                      ; 5.800 ns                ;
+; N/A   ; 144.93 MHz ( period = 6.900 ns )               ; data_rd[4]    ; usb_data[6]~reg0 ; clk        ; clk      ; None                        ; None                      ; 5.800 ns                ;
+; N/A   ; 144.93 MHz ( period = 6.900 ns )               ; data_rd[5]    ; usb_data[7]~reg0 ; clk        ; clk      ; None                        ; None                      ; 5.800 ns                ;
+; N/A   ; 147.06 MHz ( period = 6.800 ns )               ; counter_rd[1] ; usb_data[0]~reg0 ; clk        ; clk      ; None                        ; None                      ; 5.700 ns                ;
+; N/A   ; 147.06 MHz ( period = 6.800 ns )               ; counter_rd[1] ; usb_data[1]~reg0 ; clk        ; clk      ; None                        ; None                      ; 5.700 ns                ;
+; N/A   ; 147.06 MHz ( period = 6.800 ns )               ; counter_rd[1] ; counter_wr[0]    ; clk        ; clk      ; None                        ; None                      ; 5.700 ns                ;
+; N/A   ; 147.06 MHz ( period = 6.800 ns )               ; data_rd[3]    ; usb_data[5]~reg0 ; clk        ; clk      ; None                        ; None                      ; 5.700 ns                ;
+; N/A   ; 149.25 MHz ( period = 6.700 ns )               ; data_rd[1]    ; usb_data[2]~reg0 ; clk        ; clk      ; None                        ; None                      ; 5.600 ns                ;
+; N/A   ; 149.25 MHz ( period = 6.700 ns )               ; data_rd[2]    ; usb_data[3]~reg0 ; clk        ; clk      ; None                        ; None                      ; 5.600 ns                ;
+; N/A   ; 149.25 MHz ( period = 6.700 ns )               ; counter_wr[0] ; rd_buf           ; clk        ; clk      ; None                        ; None                      ; 5.600 ns                ;
+; N/A   ; 149.25 MHz ( period = 6.700 ns )               ; data_rd[4]    ; usb_data[5]~reg0 ; clk        ; clk      ; None                        ; None                      ; 5.600 ns                ;
+; N/A   ; 149.25 MHz ( period = 6.700 ns )               ; data_rd[5]    ; usb_data[6]~reg0 ; clk        ; clk      ; None                        ; None                      ; 5.600 ns                ;
+; N/A   ; 149.25 MHz ( period = 6.700 ns )               ; data_rd[6]    ; usb_data[7]~reg0 ; clk        ; clk      ; None                        ; None                      ; 5.600 ns                ;
+; N/A   ; 151.52 MHz ( period = 6.600 ns )               ; counter_rd[0] ; usb_data[0]~reg0 ; clk        ; clk      ; None                        ; None                      ; 5.500 ns                ;
+; N/A   ; 151.52 MHz ( period = 6.600 ns )               ; counter_rd[0] ; usb_data[1]~reg0 ; clk        ; clk      ; None                        ; None                      ; 5.500 ns                ;
+; N/A   ; 151.52 MHz ( period = 6.600 ns )               ; counter_rd[0] ; counter_wr[0]    ; clk        ; clk      ; None                        ; None                      ; 5.500 ns                ;
+; N/A   ; 151.52 MHz ( period = 6.600 ns )               ; counter_wr[1] ; wr_buf           ; clk        ; clk      ; None                        ; None                      ; 5.500 ns                ;
+; N/A   ; 151.52 MHz ( period = 6.600 ns )               ; data_rd[3]    ; usb_data[4]~reg0 ; clk        ; clk      ; None                        ; None                      ; 5.500 ns                ;
+; N/A   ; 153.85 MHz ( period = 6.500 ns )               ; counter_rd[1] ; wr_buf           ; clk        ; clk      ; None                        ; None                      ; 5.400 ns                ;
+; N/A   ; 156.25 MHz ( period = 6.400 ns )               ; data_rd[0]    ; usb_data[7]~reg0 ; clk        ; clk      ; None                        ; None                      ; 5.300 ns                ;
+; N/A   ; 158.73 MHz ( period = 6.300 ns )               ; counter_wr[1] ; counter_rd[0]    ; clk        ; clk      ; None                        ; None                      ; 5.200 ns                ;
+; N/A   ; 158.73 MHz ( period = 6.300 ns )               ; counter_rd[0] ; wr_buf           ; clk        ; clk      ; None                        ; None                      ; 5.200 ns                ;
+; N/A   ; 161.29 MHz ( period = 6.200 ns )               ; data_rd[1]    ; usb_data[1]~reg0 ; clk        ; clk      ; None                        ; None                      ; 5.100 ns                ;
+; N/A   ; 161.29 MHz ( period = 6.200 ns )               ; counter_rd[1] ; counter_rd[0]    ; clk        ; clk      ; None                        ; None                      ; 5.100 ns                ;
+; N/A   ; 161.29 MHz ( period = 6.200 ns )               ; data_rd[2]    ; usb_data[2]~reg0 ; clk        ; clk      ; None                        ; None                      ; 5.100 ns                ;
+; N/A   ; 161.29 MHz ( period = 6.200 ns )               ; data_rd[4]    ; usb_data[4]~reg0 ; clk        ; clk      ; None                        ; None                      ; 5.100 ns                ;
+; N/A   ; 161.29 MHz ( period = 6.200 ns )               ; data_rd[5]    ; usb_data[5]~reg0 ; clk        ; clk      ; None                        ; None                      ; 5.100 ns                ;
+; N/A   ; 161.29 MHz ( period = 6.200 ns )               ; data_rd[0]    ; usb_data[6]~reg0 ; clk        ; clk      ; None                        ; None                      ; 5.100 ns                ;
+; N/A   ; 161.29 MHz ( period = 6.200 ns )               ; data_rd[6]    ; usb_data[6]~reg0 ; clk        ; clk      ; None                        ; None                      ; 5.100 ns                ;
+; N/A   ; 163.93 MHz ( period = 6.100 ns )               ; data_rd[3]    ; usb_data[3]~reg0 ; clk        ; clk      ; None                        ; None                      ; 5.000 ns                ;
+; N/A   ; 163.93 MHz ( period = 6.100 ns )               ; counter_wr[1] ; rd_buf           ; clk        ; clk      ; None                        ; None                      ; 5.000 ns                ;
+; N/A   ; 166.67 MHz ( period = 6.000 ns )               ; counter_rd[0] ; counter_rd[0]    ; clk        ; clk      ; None                        ; None                      ; 4.900 ns                ;
+; N/A   ; 166.67 MHz ( period = 6.000 ns )               ; counter_rd[1] ; rd_buf           ; clk        ; clk      ; None                        ; None                      ; 4.900 ns                ;
+; N/A   ; 166.67 MHz ( period = 6.000 ns )               ; data_rd[0]    ; usb_data[5]~reg0 ; clk        ; clk      ; None                        ; None                      ; 4.900 ns                ;
+; N/A   ; 166.67 MHz ( period = 6.000 ns )               ; data_rd[7]    ; usb_data[7]~reg0 ; clk        ; clk      ; None                        ; None                      ; 4.900 ns                ;
+; N/A   ; 172.41 MHz ( period = 5.800 ns )               ; counter_rd[1] ; data_rd[0]       ; clk        ; clk      ; None                        ; None                      ; 4.700 ns                ;
+; N/A   ; 172.41 MHz ( period = 5.800 ns )               ; counter_rd[1] ; data_rd[1]       ; clk        ; clk      ; None                        ; None                      ; 4.700 ns                ;
+; N/A   ; 172.41 MHz ( period = 5.800 ns )               ; rxf_buf       ; counter_rd[0]    ; clk        ; clk      ; None                        ; None                      ; 4.700 ns                ;
+; N/A   ; 172.41 MHz ( period = 5.800 ns )               ; counter_rd[1] ; data_rd[2]       ; clk        ; clk      ; None                        ; None                      ; 4.700 ns                ;
+; N/A   ; 172.41 MHz ( period = 5.800 ns )               ; counter_rd[0] ; rd_buf           ; clk        ; clk      ; None                        ; None                      ; 4.700 ns                ;
+; N/A   ; 172.41 MHz ( period = 5.800 ns )               ; data_rd[0]    ; usb_data[4]~reg0 ; clk        ; clk      ; None                        ; None                      ; 4.700 ns                ;
+; N/A   ; 172.41 MHz ( period = 5.800 ns )               ; counter_rd[1] ; data_rd[4]       ; clk        ; clk      ; None                        ; None                      ; 4.700 ns                ;
+; N/A   ; 172.41 MHz ( period = 5.800 ns )               ; counter_rd[1] ; data_rd[5]       ; clk        ; clk      ; None                        ; None                      ; 4.700 ns                ;
+; N/A   ; 172.41 MHz ( period = 5.800 ns )               ; counter_rd[1] ; data_rd[6]       ; clk        ; clk      ; None                        ; None                      ; 4.700 ns                ;
+; N/A   ; 172.41 MHz ( period = 5.800 ns )               ; counter_rd[1] ; data_rd[7]       ; clk        ; clk      ; None                        ; None                      ; 4.700 ns                ;
+; N/A   ; 175.44 MHz ( period = 5.700 ns )               ; counter_rd[1] ; data_rd[3]       ; clk        ; clk      ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 178.57 MHz ( period = 5.600 ns )               ; counter_rd[0] ; data_rd[0]       ; clk        ; clk      ; None                        ; None                      ; 4.500 ns                ;
+; N/A   ; 178.57 MHz ( period = 5.600 ns )               ; counter_rd[0] ; data_rd[1]       ; clk        ; clk      ; None                        ; None                      ; 4.500 ns                ;
+; N/A   ; 178.57 MHz ( period = 5.600 ns )               ; counter_rd[0] ; data_rd[2]       ; clk        ; clk      ; None                        ; None                      ; 4.500 ns                ;
+; N/A   ; 178.57 MHz ( period = 5.600 ns )               ; data_rd[0]    ; usb_data[3]~reg0 ; clk        ; clk      ; None                        ; None                      ; 4.500 ns                ;
+; N/A   ; 178.57 MHz ( period = 5.600 ns )               ; counter_rd[0] ; data_rd[4]       ; clk        ; clk      ; None                        ; None                      ; 4.500 ns                ;
+; N/A   ; 178.57 MHz ( period = 5.600 ns )               ; counter_rd[0] ; data_rd[5]       ; clk        ; clk      ; None                        ; None                      ; 4.500 ns                ;
+; N/A   ; 178.57 MHz ( period = 5.600 ns )               ; counter_rd[0] ; data_rd[6]       ; clk        ; clk      ; None                        ; None                      ; 4.500 ns                ;
+; N/A   ; 178.57 MHz ( period = 5.600 ns )               ; counter_rd[0] ; data_rd[7]       ; clk        ; clk      ; None                        ; None                      ; 4.500 ns                ;
+; N/A   ; 181.82 MHz ( period = 5.500 ns )               ; counter_rd[0] ; data_rd[3]       ; clk        ; clk      ; None                        ; None                      ; 4.400 ns                ;
+; N/A   ; 185.19 MHz ( period = 5.400 ns )               ; data_rd[0]    ; usb_data[2]~reg0 ; clk        ; clk      ; None                        ; None                      ; 4.300 ns                ;
+; N/A   ; 192.31 MHz ( period = 5.200 ns )               ; data_rd[0]    ; usb_data[1]~reg0 ; clk        ; clk      ; None                        ; None                      ; 4.100 ns                ;
+; N/A   ; 192.31 MHz ( period = 5.200 ns )               ; rxf_buf       ; rd_buf           ; clk        ; clk      ; None                        ; None                      ; 4.100 ns                ;
+; N/A   ; 200.00 MHz ( period = 5.000 ns )               ; counter_wr[0] ; counter_wr[1]    ; clk        ; clk      ; None                        ; None                      ; 3.900 ns                ;
+; N/A   ; 200.00 MHz ( period = 5.000 ns )               ; counter_wr[0] ; counter_rd[1]    ; clk        ; clk      ; None                        ; None                      ; 3.900 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; txe_buf       ; counter_wr[0]    ; clk        ; clk      ; None                        ; None                      ; 3.400 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; counter_wr[1] ; counter_wr[1]    ; clk        ; clk      ; None                        ; None                      ; 3.300 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; counter_wr[1] ; counter_rd[1]    ; clk        ; clk      ; None                        ; None                      ; 3.300 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; counter_rd[1] ; counter_wr[1]    ; clk        ; clk      ; None                        ; None                      ; 3.200 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; counter_rd[1] ; counter_rd[1]    ; clk        ; clk      ; None                        ; None                      ; 3.200 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; counter_rd[0] ; counter_wr[1]    ; clk        ; clk      ; None                        ; None                      ; 3.000 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; counter_rd[0] ; counter_rd[1]    ; clk        ; clk      ; None                        ; None                      ; 3.000 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; txe_buf       ; wr_buf           ; clk        ; clk      ; None                        ; None                      ; 3.000 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; data_rd[0]    ; usb_data[0]~reg0 ; clk        ; clk      ; None                        ; None                      ; 2.500 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; rxf_buf       ; counter_rd[1]    ; clk        ; clk      ; None                        ; None                      ; 2.400 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; counter_wr[1] ; usb_data[0]~en   ; clk        ; clk      ; None                        ; None                      ; 2.000 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; txe_buf       ; counter_wr[1]    ; clk        ; clk      ; None                        ; None                      ; 1.800 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; rd_buf        ; rd_buf           ; clk        ; clk      ; None                        ; None                      ; 1.400 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; wr_buf        ; wr_buf           ; clk        ; clk      ; None                        ; None                      ; 1.400 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; counter_wr[0] ; usb_data[0]~en   ; clk        ; clk      ; None                        ; None                      ; 1.100 ns                ;
++-------+------------------------------------------------+---------------+------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++-------------------------------------------------------------------------+
+; tsu                                                                     ;
++-------+--------------+------------+-------------+------------+----------+
+; Slack ; Required tsu ; Actual tsu ; From        ; To         ; To Clock ;
++-------+--------------+------------+-------------+------------+----------+
+; N/A   ; None         ; 7.900 ns   ; txe         ; txe_buf    ; clk      ;
+; N/A   ; None         ; 6.200 ns   ; usb_data[7] ; data_rd[7] ; clk      ;
+; N/A   ; None         ; 6.100 ns   ; usb_data[6] ; data_rd[6] ; clk      ;
+; N/A   ; None         ; 6.100 ns   ; usb_data[5] ; data_rd[5] ; clk      ;
+; N/A   ; None         ; 6.100 ns   ; usb_data[4] ; data_rd[4] ; clk      ;
+; N/A   ; None         ; 6.100 ns   ; usb_data[3] ; data_rd[3] ; clk      ;
+; N/A   ; None         ; 6.100 ns   ; usb_data[2] ; data_rd[2] ; clk      ;
+; N/A   ; None         ; 6.000 ns   ; usb_data[1] ; data_rd[1] ; clk      ;
+; N/A   ; None         ; 6.000 ns   ; usb_data[0] ; data_rd[0] ; clk      ;
+; N/A   ; None         ; 5.200 ns   ; rxf         ; rxf_buf    ; clk      ;
++-------+--------------+------------+-------------+------------+----------+
+
+
++---------------------------------------------------------------------------------+
+; tco                                                                             ;
++-------+--------------+------------+------------------+-------------+------------+
+; Slack ; Required tco ; Actual tco ; From             ; To          ; From Clock ;
++-------+--------------+------------+------------------+-------------+------------+
+; N/A   ; None         ; 12.000 ns  ; data_rd[0]       ; led[0]      ; clk        ;
+; N/A   ; None         ; 11.100 ns  ; rd_buf           ; rd          ; clk        ;
+; N/A   ; None         ; 11.000 ns  ; wr_buf           ; wr          ; clk        ;
+; N/A   ; None         ; 9.700 ns   ; usb_data[0]~en   ; usb_data[7] ; clk        ;
+; N/A   ; None         ; 9.700 ns   ; usb_data[7]~reg0 ; usb_data[7] ; clk        ;
+; N/A   ; None         ; 9.700 ns   ; usb_data[0]~en   ; usb_data[6] ; clk        ;
+; N/A   ; None         ; 9.700 ns   ; usb_data[6]~reg0 ; usb_data[6] ; clk        ;
+; N/A   ; None         ; 9.700 ns   ; usb_data[0]~en   ; usb_data[5] ; clk        ;
+; N/A   ; None         ; 9.700 ns   ; usb_data[5]~reg0 ; usb_data[5] ; clk        ;
+; N/A   ; None         ; 9.700 ns   ; usb_data[0]~en   ; usb_data[4] ; clk        ;
+; N/A   ; None         ; 9.700 ns   ; usb_data[4]~reg0 ; usb_data[4] ; clk        ;
+; N/A   ; None         ; 9.700 ns   ; usb_data[0]~en   ; usb_data[3] ; clk        ;
+; N/A   ; None         ; 9.700 ns   ; usb_data[3]~reg0 ; usb_data[3] ; clk        ;
+; N/A   ; None         ; 9.700 ns   ; usb_data[0]~en   ; usb_data[2] ; clk        ;
+; N/A   ; None         ; 9.700 ns   ; usb_data[2]~reg0 ; usb_data[2] ; clk        ;
+; N/A   ; None         ; 9.700 ns   ; usb_data[0]~en   ; usb_data[1] ; clk        ;
+; N/A   ; None         ; 9.700 ns   ; usb_data[1]~reg0 ; usb_data[1] ; clk        ;
+; N/A   ; None         ; 9.700 ns   ; usb_data[0]~reg0 ; usb_data[0] ; clk        ;
+; N/A   ; None         ; 9.700 ns   ; usb_data[0]~en   ; usb_data[0] ; clk        ;
+; N/A   ; None         ; 9.700 ns   ; data_rd[3]       ; led[3]      ; clk        ;
+; N/A   ; None         ; 9.700 ns   ; data_rd[2]       ; led[2]      ; clk        ;
+; N/A   ; None         ; 9.700 ns   ; data_rd[1]       ; led[1]      ; clk        ;
++-------+--------------+------------+------------------+-------------+------------+
+
+
++-------------------------------------------------------------------------------+
+; th                                                                            ;
++---------------+-------------+-----------+-------------+------------+----------+
+; Minimum Slack ; Required th ; Actual th ; From        ; To         ; To Clock ;
++---------------+-------------+-----------+-------------+------------+----------+
+; N/A           ; None        ; -3.300 ns ; rxf         ; rxf_buf    ; clk      ;
+; N/A           ; None        ; -4.100 ns ; usb_data[1] ; data_rd[1] ; clk      ;
+; N/A           ; None        ; -4.100 ns ; usb_data[0] ; data_rd[0] ; clk      ;
+; N/A           ; None        ; -4.200 ns ; usb_data[6] ; data_rd[6] ; clk      ;
+; N/A           ; None        ; -4.200 ns ; usb_data[5] ; data_rd[5] ; clk      ;
+; N/A           ; None        ; -4.200 ns ; usb_data[4] ; data_rd[4] ; clk      ;
+; N/A           ; None        ; -4.200 ns ; usb_data[3] ; data_rd[3] ; clk      ;
+; N/A           ; None        ; -4.200 ns ; usb_data[2] ; data_rd[2] ; clk      ;
+; N/A           ; None        ; -4.300 ns ; usb_data[7] ; data_rd[7] ; clk      ;
+; N/A           ; None        ; -6.000 ns ; txe         ; txe_buf    ; clk      ;
++---------------+-------------+-----------+-------------+------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 7.2 Build 175 11/20/2007 Service Pack 1 SJ Full Version
+    Info: Processing started: Sat Oct 16 14:17:34 2010
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off first -c first
+Info: Started post-fitting delay annotation
+Info: Delay annotation completed successfully
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "clk" is an undefined clock
+Info: Clock "clk" has Internal fmax of 129.87 MHz between source register "data_rd[1]" and destination register "usb_data[7]~reg0" (period= 7.7 ns)
+    Info: + Longest register to register delay is 6.600 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC2_B23; Fanout = 3; REG Node = 'data_rd[1]'
+        Info: 2: + IC(1.000 ns) + CELL(0.700 ns) = 1.700 ns; Loc. = LC2_B22; Fanout = 2; COMB Node = 'lpm_add_sub:Add2|addcore:adder|a_csnbuffer:result_node|cout[1]'
+        Info: 3: + IC(0.000 ns) + CELL(0.200 ns) = 1.900 ns; Loc. = LC3_B22; Fanout = 2; COMB Node = 'lpm_add_sub:Add2|addcore:adder|a_csnbuffer:result_node|cout[2]'
+        Info: 4: + IC(0.000 ns) + CELL(0.200 ns) = 2.100 ns; Loc. = LC4_B22; Fanout = 2; COMB Node = 'lpm_add_sub:Add2|addcore:adder|a_csnbuffer:result_node|cout[3]'
+        Info: 5: + IC(0.000 ns) + CELL(0.200 ns) = 2.300 ns; Loc. = LC5_B22; Fanout = 2; COMB Node = 'lpm_add_sub:Add2|addcore:adder|a_csnbuffer:result_node|cout[4]'
+        Info: 6: + IC(0.000 ns) + CELL(0.200 ns) = 2.500 ns; Loc. = LC6_B22; Fanout = 2; COMB Node = 'lpm_add_sub:Add2|addcore:adder|a_csnbuffer:result_node|cout[5]'
+        Info: 7: + IC(0.000 ns) + CELL(0.200 ns) = 2.700 ns; Loc. = LC7_B22; Fanout = 1; COMB Node = 'lpm_add_sub:Add2|addcore:adder|a_csnbuffer:result_node|cout[6]'
+        Info: 8: + IC(0.000 ns) + CELL(1.400 ns) = 4.100 ns; Loc. = LC8_B22; Fanout = 1; COMB Node = 'lpm_add_sub:Add2|addcore:adder|unreg_res_node[7]'
+        Info: 9: + IC(1.700 ns) + CELL(0.800 ns) = 6.600 ns; Loc. = LC6_B6; Fanout = 1; REG Node = 'usb_data[7]~reg0'
+        Info: Total cell delay = 3.900 ns ( 59.09 % )
+        Info: Total interconnect delay = 2.700 ns ( 40.91 % )
+    Info: - Smallest clock skew is 0.000 ns
+        Info: + Shortest clock path from clock "clk" to destination register is 2.400 ns
+            Info: 1: + IC(0.000 ns) + CELL(2.000 ns) = 2.000 ns; Loc. = PIN_125; Fanout = 25; CLK Node = 'clk'
+            Info: 2: + IC(0.400 ns) + CELL(0.000 ns) = 2.400 ns; Loc. = LC6_B6; Fanout = 1; REG Node = 'usb_data[7]~reg0'
+            Info: Total cell delay = 2.000 ns ( 83.33 % )
+            Info: Total interconnect delay = 0.400 ns ( 16.67 % )
+        Info: - Longest clock path from clock "clk" to source register is 2.400 ns
+            Info: 1: + IC(0.000 ns) + CELL(2.000 ns) = 2.000 ns; Loc. = PIN_125; Fanout = 25; CLK Node = 'clk'
+            Info: 2: + IC(0.400 ns) + CELL(0.000 ns) = 2.400 ns; Loc. = LC2_B23; Fanout = 3; REG Node = 'data_rd[1]'
+            Info: Total cell delay = 2.000 ns ( 83.33 % )
+            Info: Total interconnect delay = 0.400 ns ( 16.67 % )
+    Info: + Micro clock to output delay of source is 0.500 ns
+    Info: + Micro setup delay of destination is 0.600 ns
+Info: tsu for register "txe_buf" (data pin = "txe", clock pin = "clk") is 7.900 ns
+    Info: + Longest pin to register delay is 9.700 ns
+        Info: 1: + IC(0.000 ns) + CELL(4.900 ns) = 4.900 ns; Loc. = PIN_79; Fanout = 1; PIN Node = 'txe'
+        Info: 2: + IC(4.000 ns) + CELL(0.800 ns) = 9.700 ns; Loc. = LC2_B6; Fanout = 3; REG Node = 'txe_buf'
+        Info: Total cell delay = 5.700 ns ( 58.76 % )
+        Info: Total interconnect delay = 4.000 ns ( 41.24 % )
+    Info: + Micro setup delay of destination is 0.600 ns
+    Info: - Shortest clock path from clock "clk" to destination register is 2.400 ns
+        Info: 1: + IC(0.000 ns) + CELL(2.000 ns) = 2.000 ns; Loc. = PIN_125; Fanout = 25; CLK Node = 'clk'
+        Info: 2: + IC(0.400 ns) + CELL(0.000 ns) = 2.400 ns; Loc. = LC2_B6; Fanout = 3; REG Node = 'txe_buf'
+        Info: Total cell delay = 2.000 ns ( 83.33 % )
+        Info: Total interconnect delay = 0.400 ns ( 16.67 % )
+Info: tco from clock "clk" to destination pin "led[0]" through register "data_rd[0]" is 12.000 ns
+    Info: + Longest clock path from clock "clk" to source register is 2.400 ns
+        Info: 1: + IC(0.000 ns) + CELL(2.000 ns) = 2.000 ns; Loc. = PIN_125; Fanout = 25; CLK Node = 'clk'
+        Info: 2: + IC(0.400 ns) + CELL(0.000 ns) = 2.400 ns; Loc. = LC1_B22; Fanout = 3; REG Node = 'data_rd[0]'
+        Info: Total cell delay = 2.000 ns ( 83.33 % )
+        Info: Total interconnect delay = 0.400 ns ( 16.67 % )
+    Info: + Micro clock to output delay of source is 0.500 ns
+    Info: + Longest register to pin delay is 9.100 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC1_B22; Fanout = 3; REG Node = 'data_rd[0]'
+        Info: 2: + IC(0.900 ns) + CELL(1.400 ns) = 2.300 ns; Loc. = LC1_B24; Fanout = 1; COMB Node = 'led[0]~0'
+        Info: 3: + IC(0.500 ns) + CELL(6.300 ns) = 9.100 ns; Loc. = PIN_144; Fanout = 0; PIN Node = 'led[0]'
+        Info: Total cell delay = 7.700 ns ( 84.62 % )
+        Info: Total interconnect delay = 1.400 ns ( 15.38 % )
+Info: th for register "rxf_buf" (data pin = "rxf", clock pin = "clk") is -3.300 ns
+    Info: + Longest clock path from clock "clk" to destination register is 2.400 ns
+        Info: 1: + IC(0.000 ns) + CELL(2.000 ns) = 2.000 ns; Loc. = PIN_125; Fanout = 25; CLK Node = 'clk'
+        Info: 2: + IC(0.400 ns) + CELL(0.000 ns) = 2.400 ns; Loc. = LC1_C7; Fanout = 3; REG Node = 'rxf_buf'
+        Info: Total cell delay = 2.000 ns ( 83.33 % )
+        Info: Total interconnect delay = 0.400 ns ( 16.67 % )
+    Info: + Micro hold delay of destination is 1.300 ns
+    Info: - Shortest pin to register delay is 7.000 ns
+        Info: 1: + IC(0.000 ns) + CELL(4.900 ns) = 4.900 ns; Loc. = PIN_78; Fanout = 1; PIN Node = 'rxf'
+        Info: 2: + IC(1.300 ns) + CELL(0.800 ns) = 7.000 ns; Loc. = LC1_C7; Fanout = 3; REG Node = 'rxf_buf'
+        Info: Total cell delay = 5.700 ns ( 81.43 % )
+        Info: Total interconnect delay = 1.300 ns ( 18.57 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 1 warning
+    Info: Allocated 155 megabytes of memory during processing
+    Info: Processing ended: Sat Oct 16 14:17:34 2010
+    Info: Elapsed time: 00:00:00
+
+
